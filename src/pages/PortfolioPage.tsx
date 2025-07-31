@@ -1,6 +1,6 @@
 import React from 'react';
-import ProjectCard from '../components/Portfolio/ProjectCard';
-import projectsData from '../assets/data/projects'; // Import your project data
+import ProjectCard from '../components/Portfolio/ProjectCard.jsx';
+import projectsData from '../assets/data/projects.js'; // Import your project data
 
 function PortfolioPage() {
   return (

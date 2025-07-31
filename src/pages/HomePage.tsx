@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSection from '../components/Home/HeroSection'; // Make sure this path is correct
+import HeroSection from '../components/Home/HeroSection.jsx';
 
 function HomePage() {
   return (

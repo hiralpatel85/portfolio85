@@ -1,7 +1,8 @@
 import React from 'react';
-import BioSection from '../components/About/BioSection';
-import ExperienceSection from '../components/About/ExperienceSection';
-import SkillsSection from '../components/About/SkillsSection'; // Optional: if you want a dedicated skills section
+import BioSection from '../components/About/BioSection.jsx';
+import ExperienceSection from '../components/About/ExperienceSection.jsx';
+import SkillsSection from '../components/About/SkillsSection.jsx';
+import EducationSection from '../components/About/EducationSection.jsx';
 
 function AboutPage() {
   return (
@@ -12,7 +13,8 @@ function AboutPage() {
       <div className="max-w-4xl mx-auto space-y-16">
         <BioSection />
         <ExperienceSection />
-        <SkillsSection /> {/* Uncomment if you create a dedicated skills section */}
+        <EducationSection />
+        <SkillsSection />
       </div>
     </div>
   );

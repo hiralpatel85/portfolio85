@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 // Pages
-import HomePage from './pages/HomePage.jsx';
-import AboutPage from './pages/AboutPage.jsx';
-import PortfolioPage from './pages/PortfolioPage.jsx';
-import ServicesPage from './pages/ServicesPage.jsx'; // Optional
-import ContactPage from './pages/ContactPage.jsx';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import PortfolioPage from './pages/PortfolioPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
 
 // Common Components
 import Navbar from './components/common/Navbar.jsx';
 import Footer from './components/common/Footer.jsx';
 import ScrollToTopButton from './components/common/ScrollToTopButton.jsx';
 
-// Context for theme management (create this in hooks or utils)
+// Context for theme management
 import { ThemeProvider, useTheme } from './hooks/useTheme.jsx';
 
 // Page transition variants for Framer Motion
@@ -24,8 +24,8 @@ const pageVariants = {
 };
 
 const pageTransition = {
-  type: 'tween',
-  ease: 'easeOut',
+  type: 'tween' as const,
+  ease: 'easeOut' as const,
   duration: 0.4,
 };
 
@@ -55,7 +55,7 @@ function AppContent() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
-            {/* <Route path="/services" element={<ServicesPage />} /> */} {/* Uncomment if you include services */}
+            <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </motion.div>

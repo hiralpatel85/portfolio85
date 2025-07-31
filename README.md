@@ -1,12 +1,46 @@
-# React + Vite
+# Hiral Patel - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my work as a MERN Stack Developer.
 
-Currently, two official plugins are available:
+## About Me
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I'm Hiral Patel, a passionate MERN Stack Developer based in Ahmedabad, Gujarat. I specialize in building full-stack web applications using MongoDB, Express.js, React, and Node.js.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Modern Design**: Clean, responsive design with dark/light theme toggle
+- **Smooth Animations**: Built with Framer Motion for engaging user experience
+- **Portfolio Showcase**: Display of projects and skills
+- **Contact Form**: Easy way for potential clients to get in touch
+- **Mobile Responsive**: Optimized for all device sizes
+
+## Technologies Used
+
+- **Frontend**: React, TypeScript, Tailwind CSS
+- **Animations**: Framer Motion
+- **UI Components**: Shadcn/ui
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Contact
+
+- **Email**: hirpatel2314@gmail.com
+- **Phone**: +91 8849662996
+- **Location**: Ahmedabad, Gujarat
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
