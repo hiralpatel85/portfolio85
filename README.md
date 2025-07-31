@@ -35,11 +35,6 @@ I'm Hiral Patel, a passionate MERN Stack Developer based in Ahmedabad, Gujarat. 
    ```
 4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
-## Contact
-
-- **Email**: hirpatel2314@gmail.com
-- **Phone**: +91 8849662996
-- **Location**: Ahmedabad, Gujarat
 
 ## License
 
