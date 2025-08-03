@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -29,6 +30,10 @@ function Navbar() {
     "font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors duration-200 relative group";
   const activeClasses = "text-primary dark:text-primary font-semibold";
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -42,6 +47,7 @@ function Navbar() {
         {/* Logo/Name */}
         <Link
           to="/"
+          onClick={scrollToTop}
           className="text-xl md:text-2xl font-bold text-gradient hover:scale-105 transition-transform duration-300"
         >
           Hiral Patel
@@ -53,6 +59,7 @@ function Navbar() {
             <Link
               key={link.name}
               to={link.path}
+              onClick={scrollToTop}
               className={`${commonClasses} ${
                 location.pathname === link.path ? activeClasses : ""
               }`}
@@ -61,12 +68,12 @@ function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-3">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-text-light dark:text-text-dark focus:outline-none hover:text-primary transition-colors duration-200 p-1"
@@ -93,7 +100,10 @@ function Navbar() {
                 className={`${commonClasses} text-lg ${
                   location.pathname === link.path ? activeClasses : ""
                 }`}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  scrollToTop();
+                }}
               >
                 {link.name}
               </Link>

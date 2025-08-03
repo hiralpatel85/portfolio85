@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 // Pages
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import PortfolioPage from './pages/PortfolioPage';
-import ServicesPage from './pages/ServicesPage';
-import ContactPage from './pages/ContactPage';
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import PortfolioPage from "./pages/PortfolioPage";
+import ServicesPage from "./pages/ServicesPage";
+import ContactPage from "./pages/ContactPage";
 
 // Common Components
-import Navbar from './components/common/Navbar.jsx';
-import Footer from './components/common/Footer.jsx';
-import ScrollToTopButton from './components/common/ScrollToTopButton.jsx';
+import Navbar from "./components/common/Navbar.jsx";
+import Footer from "./components/common/Footer.jsx";
+import ScrollToTopButton from "./components/common/ScrollToTopButton.jsx";
 
 // Context for theme management
-import { ThemeProvider, useTheme } from './hooks/useTheme.jsx';
+import { ThemeProvider, useTheme } from "./hooks/useTheme.jsx";
 
 // Page transition variants for Framer Motion
 const pageVariants = {
@@ -24,8 +29,8 @@ const pageVariants = {
 };
 
 const pageTransition = {
-  type: 'tween' as const,
-  ease: 'easeOut' as const,
+  type: "tween" as const,
+  ease: "easeOut" as const,
   duration: 0.4,
 };
 
@@ -35,7 +40,7 @@ function AppContent() {
 
   // Apply dark mode class to HTML element
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
   return (

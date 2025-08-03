@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import { Briefcase, Calendar, MapPin, Star } from "lucide-react";
 
 const experiences = [
@@ -63,12 +63,7 @@ function ExperienceSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
+      transition: { duration: 0.6, ease: easeInOut, staggerChildren: 0.2 },
     },
   };
 
@@ -77,13 +72,13 @@ function ExperienceSection() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
+      transition: { duration: 0.4, ease: easeInOut },
     },
   };
 
   return (
     <motion.section
-      className="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden"
+      className="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden select-none"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"

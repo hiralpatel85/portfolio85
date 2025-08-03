@@ -1,3 +1,4 @@
+import React from "react";
 import { Button as ShadcnButton } from "../ui/button"; // Import Shadcn's button
 
 const Button = ({ children, ...props }) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Code, Database, Smartphone, Zap } from "lucide-react";
 import { Button } from "../ui/button.tsx";
@@ -20,7 +20,7 @@ function HeroSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 10 },
+      transition: { duration: 0.5, ease: easeInOut },
     },
   };
 
@@ -32,7 +32,7 @@ function HeroSection() {
   ];
 
   return (
-    <div className="relative min-h-[calc(100vh-50px)] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-[calc(100vh-50px)] flex items-center justify-center overflow-hidden select-none">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {floatingIcons.map((item, index) => (
@@ -51,7 +51,7 @@ function HeroSection() {
               duration: 6,
               delay: item.delay,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: easeInOut,
             }}
           >
             <item.icon size={40} className="md:w-[60px] md:h-[60px]" />
@@ -62,6 +62,9 @@ function HeroSection() {
       <motion.section
         className="text-center max-w-4xl md:max-w-5xl mx-auto py-8 md:py-12 lg:py-24 px-4 relative z-10"
         variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div className="mb-6 md:mb-8" variants={itemVariants}>
           <h2 className="text-base md:text-lg lg:text-xl text-primary font-semibold mb-4">

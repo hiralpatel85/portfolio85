@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import * as LucideIcons from "lucide-react";
 import {
   Card,
@@ -15,26 +15,37 @@ const Icon = ({ name, size = 28, className = "" }) => {
   return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
 };
 
-function ServiceCard({ service }) {
+// Add prop type
+interface ServiceCardProps {
+  service: {
+    icon: string;
+    title: string;
+    description: string;
+    details?: string[];
+  };
+}
+
+function ServiceCard({ service }: ServiceCardProps) {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: easeInOut },
     },
     hover: {
       scale: 1.05,
       y: -10,
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.3, ease: easeInOut },
     },
   };
 
   return (
     <motion.div
       variants={cardVariants}
+      whileInView="visible"
       initial="hidden"
-      animate="visible" // 👈 fix for initial load
+      viewport={{ once: true, amount: 0.3 }}
       whileHover="hover"
       className="h-full select-none"
     >

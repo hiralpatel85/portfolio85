@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import { Mail, Send, User, MessageSquare, FileText } from "lucide-react";
 import { Input } from "../ui/input.tsx";
 import { Textarea } from "../ui/textarea.tsx";
@@ -59,7 +59,7 @@ function ContactForm() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: easeInOut },
     },
   };
 
@@ -180,7 +180,7 @@ function ContactForm() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              rows="4"
+              rows={4}
               placeholder="Hi Hiral, I'd like to discuss a project..."
               className="w-full rounded-lg md:rounded-xl shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:border-primary focus:ring-primary focus:ring-2 transition-all duration-300 resize-none text-sm md:text-base"
               required

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import { GraduationCap } from "lucide-react"; // Icon for education
 
 const education = [
@@ -33,12 +33,7 @@ function EducationSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
+      transition: { duration: 0.6, ease: easeInOut, staggerChildren: 0.2 },
     },
   };
 
@@ -47,13 +42,13 @@ function EducationSection() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
+      transition: { duration: 0.4, ease: easeInOut },
     },
   };
 
   return (
     <motion.section
-      className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg"
+      className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg select-none"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"

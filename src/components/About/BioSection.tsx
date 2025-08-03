@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import { User, Code, Heart } from "lucide-react";
 
 function BioSection() {
@@ -8,7 +8,7 @@ function BioSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: easeInOut },
     },
   };
 
@@ -17,7 +17,7 @@ function BioSection() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: easeInOut },
     },
   };
 
@@ -26,7 +26,7 @@ function BioSection() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: easeInOut },
     },
   };
 
@@ -69,7 +69,7 @@ function BioSection() {
           <motion.p
             className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6"
             variants={textVariants}
-            transition={{ delay: 0.1 }}
+            transition={{ duration: 0.5, ease: easeInOut }}
           >
             Hello! I'm <strong className="text-primary">Hiral Patel</strong>, a
             dedicated{" "}
@@ -82,7 +82,7 @@ function BioSection() {
           <motion.p
             className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6"
             variants={textVariants}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 0.5, ease: easeInOut }}
           >
             I thrive on turning complex problems into elegant solutions and love
             the process of bringing ideas to life, from concept to deployment.
@@ -94,7 +94,7 @@ function BioSection() {
           <motion.p
             className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
             variants={textVariants}
-            transition={{ delay: 0.3 }}
+            transition={{ duration: 0.5, ease: easeInOut }}
           >
             I'm always eager to learn new technologies and collaborate on
             exciting projects! When I'm not coding, you can find me exploring
@@ -106,7 +106,7 @@ function BioSection() {
           <motion.div
             className="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8 justify-center md:justify-start"
             variants={textVariants}
-            transition={{ delay: 0.4 }}
+            transition={{ duration: 0.5, ease: easeInOut }}
           >
             <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-2 md:px-4 md:py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-600">
               <Heart className="text-red-500 w-4 h-4 md:w-5 md:h-5" />

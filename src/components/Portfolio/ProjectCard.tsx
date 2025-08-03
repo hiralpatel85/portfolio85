@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import { Github, ExternalLink, Code, Zap } from "lucide-react";
 import {
   Card,
@@ -11,27 +11,41 @@ import {
 } from "../ui/card.tsx";
 import { Button } from "../ui/button.tsx";
 
-function ProjectCard({ project }) {
+// Add prop type
+interface ProjectCardProps {
+  project: {
+    image: string;
+    title: string;
+    description: string;
+    techStack: string[];
+    liveLink?: string;
+    githubLink?: string;
+  };
+}
+
+function ProjectCard({ project }: ProjectCardProps) {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: easeInOut },
     },
     hover: {
       scale: 1.05,
       y: -10,
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.3, ease: easeInOut },
     },
   };
 
   return (
     <motion.div
       variants={cardVariants}
+      whileInView="visible"
       initial="hidden"
-      animate="visible"
-      className="h-full"
+      viewport={{ once: true, amount: 0.3 }}
+      whileHover="hover"
+      className="h-full select-none"
     >
       <Card className="h-full flex flex-col justify-between rounded-2xl shadow-lg hover:shadow-md transition-all duration-300 border-gray-200 dark:border-gray-700 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 overflow-hidden group">
         <CardHeader className="p-0 rounded-t-2xl overflow-hidden relative">
