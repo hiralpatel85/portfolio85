@@ -1,40 +1,59 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase, Calendar, MapPin, Star } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Briefcase, Calendar, MapPin, Star } from "lucide-react";
 
 const experiences = [
   {
-    title: 'Junior Software Developer',
-    company: 'The One Technologies',
-    duration: 'Jul 2024 - Present',
-    location: 'Ahmedabad',
-    description: 'As a MERN Stack Developer, I worked on a dedicated project, developing both front-end and back-end features using MongoDB, Express.js, React, and Node.js. I was responsible for building responsive web applications, integrating APIs, and ensuring database efficiency. Additionally, I actively participated in client calls, gathering requirements, providing updates, and ensuring alignment with project goals.',
-    skills: ['MongoDB', 'Express.js', 'React', 'Node.js', 'API Integration', 'Client Communication'],
-    highlight: true
+    title: "Junior Software Developer",
+    company: "The One Technologies",
+    duration: "Jul 2024 - Present",
+    location: "Ahmedabad",
+    description:
+      "As a MERN Stack Developer, I worked on a dedicated project, developing both front-end and back-end features using MongoDB, Express.js, React, and Node.js. I was responsible for building responsive web applications, integrating APIs, and ensuring database efficiency. Additionally, I actively participated in client calls, gathering requirements, providing updates, and ensuring alignment with project goals.",
+    skills: [
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "API Integration",
+      "Client Communication",
+    ],
+    highlight: true,
   },
   {
-    title: 'Trainee Software Developer',
-    company: 'The One Technologies',
-    duration: 'Jan 2024 - Jun 2024',
-    location: 'Ahmedabad',
-    description: '• Basic Trainee (1 Month): Gained foundational skills in HTML5, CSS3, JavaScript, and SQL, completing training with a solid understanding of web development.\n• Advanced Trainee (2 Months): Enhanced MERN stack skills by building full-stack applications using MongoDB, Express.js, React, and Node.js.\n• Live Project (3 Months): Worked on live projects, gaining hands-on experience in bug fixing, meeting deadlines, and resolving complex issues in a collaborative team environment.',
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'SQL', 'MERN Stack', 'Bug Fixing', 'Team Collaboration']
+    title: "Trainee Software Developer",
+    company: "The One Technologies",
+    duration: "Jan 2024 - Jun 2024",
+    location: "Ahmedabad",
+    description:
+      "• Basic Trainee (1 Month): Gained foundational skills in HTML5, CSS3, JavaScript, and SQL, completing training with a solid understanding of web development.\n• Advanced Trainee (2 Months): Enhanced MERN stack skills by building full-stack applications using MongoDB, Express.js, React, and Node.js.\n• Live Project (3 Months): Worked on live projects, gaining hands-on experience in bug fixing, meeting deadlines, and resolving complex issues in a collaborative team environment.",
+    skills: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "SQL",
+      "MERN Stack",
+      "Bug Fixing",
+      "Team Collaboration",
+    ],
   },
   {
-    title: 'Intern',
-    company: 'Infolabz',
-    duration: 'Aug 2023 - Aug 2023',
-    location: 'Ahmedabad',
-    description: 'During this fifteen days internship I learned React.js Library and API Integration for real-time projects. I created a News-project using API integration.',
-    skills: ['React.js', 'API Integration', 'News Project']
+    title: "Intern",
+    company: "Infolabz",
+    duration: "Aug 2023 - Aug 2023",
+    location: "Ahmedabad",
+    description:
+      "During this fifteen days internship I learned React.js Library and API Integration for real-time projects. I created a News-project using API integration.",
+    skills: ["React.js", "API Integration", "News Project"],
   },
   {
-    title: 'Intern',
-    company: 'Sukem-Tech Lab',
-    duration: 'Jul 2023 - Aug 2023',
-    location: 'Ahmedabad',
-    description: 'During this internship I enhanced my web designing knowledge and learned Web designing with React.js Library.',
-    skills: ['Web Design', 'React.js', 'Frontend Development']
+    title: "Intern",
+    company: "Sukem-Tech Lab",
+    duration: "Jul 2023 - Aug 2023",
+    location: "Ahmedabad",
+    description:
+      "During this internship I enhanced my web designing knowledge and learned Web designing with React.js Library.",
+    skills: ["Web Design", "React.js", "Frontend Development"],
   },
 ];
 
@@ -55,12 +74,16 @@ function ExperienceSection() {
 
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
   };
 
   return (
     <motion.section
-      className="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-4 sm:p-6 md:p-8 rounded-3xl shadow-soft-lg border border-gray-100 dark:border-gray-700 overflow-hidden"
+      className="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -85,7 +108,11 @@ function ExperienceSection() {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className={`relative experience-card ${exp.highlight ? 'ring-2 ring-primary/20 bg-gradient-to-r from-primary/5 to-accent/5' : ''}`}
+              className={`relative experience-card ${
+                exp.highlight
+                  ? "ring-2 ring-primary/20 bg-gradient-to-r from-primary/5 to-accent/5"
+                  : ""
+              }`}
               variants={itemVariants}
             >
               {exp.highlight && (
@@ -95,21 +122,23 @@ function ExperienceSection() {
                   <span className="sm:hidden">Now</span>
                 </div>
               )}
-              
+
               <div className="flex items-start gap-3 md:gap-4">
                 <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-sm md:text-lg shadow-lg">
                   {index + 1}
                 </div>
-                
+
                 <div className="flex-1 min-w-0">
                   <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-light dark:text-text-dark mb-2">
                     {exp.title}
                   </h3>
-                  
+
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:gap-4 mb-3 text-xs md:text-sm text-gray-600 dark:text-gray-400">
                     <div className="flex items-center gap-1">
                       <Briefcase size={12} className="md:w-4 md:h-4" />
-                      <span className="text-primary font-medium">{exp.company}</span>
+                      <span className="text-primary font-medium">
+                        {exp.company}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Calendar size={12} className="md:w-4 md:h-4" />
@@ -120,11 +149,11 @@ function ExperienceSection() {
                       <span>{exp.location}</span>
                     </div>
                   </div>
-                  
+
                   <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4 whitespace-pre-line">
                     {exp.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-1 md:gap-2">
                     {exp.skills.map((skill, skillIndex) => (
                       <span
