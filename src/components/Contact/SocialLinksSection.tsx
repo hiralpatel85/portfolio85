@@ -1,15 +1,12 @@
 import React from "react";
 import { motion, easeInOut } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 function SocialLinksSection() {
   const socialLinks = [
     { name: "Email", icon: Mail, url: "mailto:hirpatel2314@gmail.com" },
     { name: "Phone", icon: Phone, url: "tel:+918849662996" },
     { name: "Location", icon: MapPin, url: "#", text: "Ahmedabad, Gujarat" },
-    // Add your GitHub and LinkedIn URLs when available
-    // { name: 'GitHub', icon: Github, url: 'https://github.com/yourusername' },
-    // { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/yourusername' },
   ];
 
   const sectionVariants = {
@@ -22,7 +19,7 @@ function SocialLinksSection() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.9 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -32,22 +29,17 @@ function SocialLinksSection() {
 
   return (
     <motion.section
-      className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg text-center select-none"
+      className="bg-gray-900 text-white dark:bg-gray-800 p-6 md:p-10 rounded-2xl shadow-lg text-center"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <h2 className="text-3xl font-bold text-primary mb-6">Get In Touch</h2>
+      <h2 className="text-3xl font-bold text-indigo-400 mb-8">Get In Touch</h2>
+
       <motion.div
-        className="flex justify-center flex-wrap gap-6"
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.1,
-            },
-          },
-        }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto"
+        variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
       >
         {socialLinks.map((link, index) => (
           <motion.a
@@ -57,17 +49,19 @@ function SocialLinksSection() {
             rel={
               link.url.startsWith("http") ? "noopener noreferrer" : undefined
             }
-            className="flex flex-col items-center p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary group"
+            className="flex flex-col items-center justify-center bg-gray-800 rounded-xl px-6 py-5 shadow hover:shadow-indigo-500/20 hover:-translate-y-1 transition-all duration-300 group max-w-xs mx-auto min-w-40"
             variants={itemVariants}
-            aria-label={`Link to my ${link.name}`}
+            aria-label={`Link to ${link.name}`}
           >
             <link.icon
-              size={48}
-              className="mb-2 group-hover:scale-110 transition-transform"
+              size={36}
+              className="mb-2 text-indigo-300 group-hover:scale-110 transition-transform duration-200"
             />
-            <span className="font-medium">{link.name}</span>
+            <span className="text-white font-semibold text-base">
+              {link.name}
+            </span>
             {link.text && (
-              <span className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+              <span className="text-sm text-gray-400 mt-1 text-center">
                 {link.text}
               </span>
             )}
